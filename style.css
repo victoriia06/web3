@@ -80,20 +80,22 @@ main, aside {
 }
 
 @media (max-width: 768px) {
-    .main-aside-wrapper {
-        display: block;
-    }
-    .menu ul {
-        flex-direction: column;
-    }
-    .menu li {
-        flex: none;
-    }
-    table {
-        width: 100%;
-    }
-    .reg {
-        width: 100%;
-    }
+    #main-aside-wrapper {
+ flex-direction: row;
+ display: flex;
+}
+#main-aside-wrapper main, #main-aside-wrapper aside {
+ background-color: #ddd;
+ margin: 10px;
+ padding: 10px;
+}
+#main-aside-wrapper aside {
+ flex: 1;
+ order: 1;
+}
+#main-aside-wrapper main {
+ flex: 3;
+ order: 2;
+}
 }
 
