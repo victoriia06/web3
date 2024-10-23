@@ -1,45 +1,54 @@
 h1 {
     text-align: center;
 }
-
-.menu {
-    background-color: #ddd;
-    overflow: hidden; 
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-    .menu ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-        display: flex; 
-        flex-direction: row;
+.contain {
+    max-width: 960px;
+    margin: auto;
+    padding: 10px;
+}
+
+header {
+    background-color: #110787;
+    color: white;
+    padding: 5px 0;
+}
+
+.logo {
+    float: left;
+    margin: 10px;
+    width: auto;
+    height: 100px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+    nav ul li {
+        display: inline;
+        margin-right: 15px;
     }
 
-    .menu li {
-        flex: 1; 
-    }
-
-    .menu a {
-        display: block;
-        text-align: center;
-        padding: 14px 20px;
-        text-decoration: none;
-        color: black;
-        transition: background-color 0.3s;
-    }
-
-        .menu a:hover {
-            background-color: #b7b7b7; 
+        nav ul li a {
+            color: white;
+            text-decoration: none;
         }
 
 table {
     border-collapse: collapse;
     text-align: center;
-    width: 960px;
+    width: auto;
     background-color: #ccc;
     margin: 0 auto;
     margin-top: 20px;
-    padding: 10px;    
+    padding: 10px;
     border: 1px solid black;
 }
 
@@ -50,52 +59,118 @@ th, td {
 }
 
 th {
-    background-color: #7e69b7; 
+    background-color: #7e69b7;
     color: white;
 }
 
 .colored-cell {
-    background-color: #d6e779; 
+    background-color: #d6e779;
 }
 
 .color-link {
-    background-color: #f5ecec; 
+    background-color: #f5ecec;
 }
 
-.reg {
+footer {
+    background-color: #110787;
+    color: white;
     text-align: center;
-    width: 960px;
+    padding: 10px 0;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column; /* По умолчанию для мобильных устройств */
+}
+
+.table {
+    order: 2; /* Порядок для таблицы */
+}
+
+.form {
+    order: 3; /* Порядок для формы */
+    text-align: center;
+    width: auto;
     background-color: #ccc;
     margin: 0 auto;
     margin-top: 20px;
     padding: 10px;
 }
 
-.main-aside-wrapper {
-    display: flex;
+.list {
+    order: 1;
 }
 
-main, aside {
-    width: 50%
+
+/* для мобильных устройств */
+@media (min-width: 768px) {
+    .sidebar {
+        visibility: hidden;
+        display: none;
+    }
 }
+
 
 @media (max-width: 768px) {
-    #main-aside-wrapper {
- flex-direction: row;
- display: flex;
-}
-#main-aside-wrapper main, #main-aside-wrapper aside {
- background-color: #ddd;
- margin: 10px;
- padding: 10px;
-}
-#main-aside-wrapper aside {
- flex: 1;
- order: 1;
-}
-#main-aside-wrapper main {
- flex: 3;
- order: 2;
-}
-}
+    .logo {
+        float: left;
+        margin: 5px;
+        width: auto;
+        height: 80px;
+    }
 
+    .content {
+        flex-direction: column;
+    }
+
+    .sidebar,
+    .main {
+        width: auto;
+        padding: 10px 0;
+    }
+
+    nav {
+        visibility: hidden;
+        display: none;
+    }
+
+        nav a {
+            margin: 5px 0;
+        }
+
+    .sidebar {
+        width: 250px;
+        background-color: #110787;
+        color: white;
+        padding: 20px;
+    }
+
+        .sidebar h2 {
+            margin-top: 0;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px 0;
+        }
+
+            .sidebar a:hover {
+                background-color: #34495e;
+            }
+
+    .container {
+        flex-direction: column; /* Или row, если хотите горизонтально */
+    }
+
+    .table {
+        order: 1; /* Теперь таблица идет после формы */
+    }
+
+
+    .list {
+        order: 2;
+    }
+}
